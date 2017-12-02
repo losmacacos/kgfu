@@ -2,8 +2,7 @@
 
 try{
 	
-	$conn = new PDO("pgsql:host=ec2-184-73-174-10.compute-1.amazonaws.com port=5432 user=zwjaegfjfxxizf password=5049949664477c785135e52fbb54265edc71a7a3c2c67cfdcc878f16f7763741
- dbname=d2jljet10m16fv");
+	$conn = new PDO("pgsql:host=ec2-107-22-167-179.compute-1.amazonaws.com port=5432 user=xbqchcqmahywjf password=3134588892d703a5b5327524a1580e3ddcfc06fa520f77464bbb63e5f8efd55d dbname=d2jljet10m16fv");
 } catch(PDOException $e){
 	die( "Connection failed: " . $e->getMessage());
 }
