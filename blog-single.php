@@ -1,0 +1,759 @@
+<?php
+    function __autoload($class_name){
+        require_once 'classes/' . $class_name . '.php';
+    }
+?>
+<!DOCTYPE html>
+<!--[if lt IE 9 ]><html class="no-js oldie" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<link rel="stylesheet" href="css/bootstrap.css" />
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Blog Single - Hola</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- script
+    ================================================== -->
+    <script src="js/modernizr.js"></script>
+    <script src="js/pace.min.js"></script>
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+</head>
+
+
+<body id="top">
+
+    <!-- header
+    ================================================== -->
+    <header class="s-header">
+            
+        <div class="header-logo">
+            <a class="site-logo" href="index.html"><img src="images/logo.png" alt="Homepage"></a>
+        </div>
+
+         <nav class="header-nav-wrap">
+            <ul class="header-nav">
+                <li><a href="index.html#home" title="home">Home</a></li>
+                <li><a href="index.html#about" title="about">História</a></li>
+                <li><a href="index.html#works" title="works">Liga Garra de Águia</a></li>
+                <li class="current"><a href="blog.html" title="blog">Atibaia II</a></li>
+                <li><a href="index.html#contact" title="contact">Contato</a></li>   
+            </ul>
+        </nav>
+
+
+        <a class="header-menu-toggle" href="#0"><span>Menu</span></a>
+
+    </header> <!-- end s-header -->
+
+
+    <article class="blog-single">
+
+        <!-- page header/blog hero
+        ================================================== -->
+        <div class="page-header page-header--single page-hero" style="background-image:url(images/blog/blog-bg-02.jpg)">
+        
+            <div class="row page-header__content narrow">
+                <article class="col-full">
+                    <div class="page-header__info">
+                        <div class="page-header__cat">
+                            <a href="#0">Cadastro do Atleta</a>
+                        </div>
+                    </div>
+                    <h1 class="page-header__title">
+                        <a href="#0" title="">
+                            Insira seus dados pessoais logo abaixo!
+                        </a>
+                    </h1>
+                    <ul class="page-header__meta">
+                        <li class="date">Novas turmas - 2017</li>
+                        <li class="author">
+                            - 
+                            <span>  Instrutora Andressa Nardini</span>
+                        </li>
+                    </ul>
+                    
+                </article>
+            </div>
+    
+        </div> <!-- end page-header -->
+
+        <div class="row blog-content">
+            <div class="col-full blog-content__main">
+
+                <?php
+    
+        $usuario = new Usuarios();
+
+        if(isset($_POST['cadastrar'])):
+
+            $nome  = $_POST['nome'];
+            $email = $_POST['email'];
+            $senha = $_POST['senha'];
+            $endereco = $_POST['endereco'];
+            $numero = $_POST['numero'];
+            $bairro = $_POST['bairro'];
+            $cidade = $_POST['cidade'];
+            $estado = $_POST['estado'];
+            $cep = $_POST['cep'];
+            $nomeMae = $_POST['nomeMae'];
+            $nomePai = $_POST['nomePai'];
+            $numRG = $_POST['numRG'];
+            $numCPF = $_POST['numCPF'];
+            $dataNasc = $_POST['dataNasc'];
+            $sexo = $_POST['sexo'];
+            $modalidade = $_POST['modalidade'];
+            $escolaridade = $_POST['escolaridade'];
+            $estadoCivil = $_POST['estadoCivil'];
+            $profissao = $_POST['profissao'];
+            $telResidencial = $_POST['telResidencial'];
+            $telCelular = $_POST['telCelular'];
+            $whatsApp = $_POST['whatsApp'];
+            $outroIdioma = $_POST['outroIdioma'];
+            $qualIdioma = $_POST['qualIdioma'];
+            $estudaAinda = $_POST['estudaAinda'];
+            $qualCurso = $_POST['qualCurso'];
+            $praticaEsporte = $_POST['praticaEsporte'];
+            $qualEsporte = $_POST['qualEsporte'];
+            $problemaSaude = $_POST['problemaSaude'];
+            $qualProblema = $_POST['qualProblema'];
+            $possuiConvenio = $_POST['possuiConvenio'];
+            $qualConvenio = $_POST['qualConvenio'];
+            $arteMarcial = $_POST['arteMarcial'];
+            $qualArte = $_POST['qualArte'];
+
+            $usuario->setNome($nome);
+            $usuario->setEmail($email);
+            $usuario->setSenha($senha);
+            $usuario->setEndereco($endereco);
+            $usuario->setNumero($numero);
+            $usuario->setBairro($bairro);
+            $usuario->setCidade($cidade);
+            $usuario->setEstado($estado);
+            $usuario->setCep($cep);
+            $usuario->setNomeMae($nomeMae);
+            $usuario->setNomePai($nomePai);
+            $usuario->setNumRG($numRG);
+            $usuario->setNumCPF($numCPF);
+            $usuario->setDataNasc($dataNasc);
+            $usuario->setSexo($sexo);
+            $usuario->setModalidade($modalidade);
+            $usuario->setEscolaridade($escolaridade);
+            $usuario->setEstadoCivil($estadoCivil);
+            $usuario->setProfissao($profissao);
+            $usuario->setTelResidencial($telResidencial);
+            $usuario->setTelCelular($telCelular);
+            $usuario->setWhatsApp($whatsApp);
+            $usuario->setOutroIdioma($outroIdioma);
+            $usuario->setQualIdioma($qualIdioma);
+            $usuario->setEstudaAinda($estudaAinda);
+            $usuario->setQualCurso($qualCurso);
+            $usuario->setPraticaEsporte($praticaEsporte);
+            $usuario->setQualEsporte($qualEsporte);
+            $usuario->setProblemaSaude($problemaSaude);
+            $usuario->setQualProblema($qualProblema);
+            $usuario->setPossuiConvenio($possuiConvenio);
+            $usuario->setQualConvenio($qualConvenio);
+            $usuario->setArteMarcial($arteMarcial);
+            $usuario->setQualArte($qualArte);
+
+            # Insert
+            if($usuario->insert()){
+                echo "Inserido com sucesso!";
+            }
+
+        endif;
+
+        ?>
+
+        <?php 
+        if(isset($_POST['atualizar'])):
+
+            $id = $_POST['id'];
+            
+            $nome  = $_POST['nome'];
+            $email = $_POST['email'];
+            $senha = $_POST['senha'];
+            $endereco = $_POST['endereco'];
+            $numero = $_POST['numero'];
+            $bairro = $_POST['bairro'];
+            $cidade = $_POST['cidade'];
+            $estado = $_POST['estado'];
+            $cep = $_POST['cep'];
+            $nomeMae = $_POST['nomeMae'];
+            $nomePai = $_POST['nomePai'];
+            $numRG = $_POST['numRG'];
+            $numCPF = $_POST['numCPF'];
+            $dataNasc = $_POST['dataNasc'];
+            $sexo = $_POST['sexo'];
+            $modalidade = $_POST['modalidade'];
+            $escolaridade = $_POST['escolaridade'];
+            $estadoCivil = $_POST['estadoCivil'];
+            $profissao = $_POST['profissao'];
+            $telResidencial = $_POST['telResidencial'];
+            $telCelular = $_POST['telCelular'];
+            $whatsApp = $_POST['whatsApp'];
+            $outroIdioma = $_POST['outroIdioma'];
+            $qualIdioma = $_POST['qualIdioma'];
+            $estudaAinda = $_POST['estudaAinda'];
+            $qualCurso = $_POST['qualCurso'];
+            $praticaEsporte = $_POST['praticaEsporte'];
+            $qualEsporte = $_POST['qualEsporte'];
+            $problemaSaude = $_POST['problemaSaude'];
+            $qualProblema = $_POST['qualProblema'];
+            $possuiConvenio = $_POST['possuiConvenio'];
+            $qualConvenio = $_POST['qualConvenio'];
+            $arteMarcial = $_POST['arteMarcial'];
+            $qualArte = $_POST['qualArte'];
+
+            $usuario->setNome($nome);
+            $usuario->setEmail($email);
+            $usuario->setSenha($senha);
+            $usuario->setEndereco($endereco);
+            $usuario->setNumero($numero);
+            $usuario->setBairro($bairro);
+            $usuario->setCidade($cidade);
+            $usuario->setEstado($estado);
+            $usuario->setCep($cep);
+            $usuario->setNomeMae($nomeMae);
+            $usuario->setNomePai($nomePai);
+            $usuario->setNumRG($numRG);
+            $usuario->setNumCPF($numCPF);
+            $usuario->setDataNasc($dataNasc);
+            $usuario->setSexo($sexo);
+            $usuario->setModalidade($modalidade);
+            $usuario->setEscolaridade($escolaridade);
+            $usuario->setEstadoCivil($estadoCivil);
+            $usuario->setProfissao($profissao);
+            $usuario->setTelResidencial($telResidencial);
+            $usuario->setTelCelular($telCelular);
+            $usuario->setWhatsApp($whatsApp);
+            $usuario->setOutroIdioma($outroIdioma);
+            $usuario->setQualIdioma($qualIdioma);
+            $usuario->setEstudaAinda($estudaAinda);
+            $usuario->setQualCurso($qualCurso);
+            $usuario->setPraticaEsporte($praticaEsporte);
+            $usuario->setQualEsporte($qualEsporte);
+            $usuario->setProblemaSaude($problemaSaude);
+            $usuario->setQualProblema($qualProblema);
+            $usuario->setPossuiConvenio($possuiConvenio);
+            $usuario->setQualConvenio($qualConvenio);
+            $usuario->setArteMarcial($arteMarcial);
+            $usuario->setQualArte($qualArte);
+
+
+            if($usuario->update($id)){
+                echo "Atualizado com sucesso!";
+            }
+
+        endif;
+        ?>
+
+        <?php
+        if(isset($_GET['acao']) && $_GET['acao'] == 'deletar'):
+
+            $id = (int)$_GET['id'];
+            if($usuario->delete($id)){
+                echo "Deletado com sucesso!";
+            }
+
+        endif;
+        ?>
+
+        <?php
+        if(isset($_GET['acao']) && $_GET['acao'] == 'editar'){
+
+            $id = (int)$_GET['id'];
+            $resultado = $usuario->find($id);
+        ?>
+
+        <form id="formulario_usuario" method="post" action="">
+            <div class="input-prepend"><label>Nome Completo</label>
+                <!-- <span class="add-on"><i class="icon-user"></i></span> -->
+                <input type="text" name="nome" value="<?php echo $resultado->nome; ?>" placeholder="Nome:" />
+            </div>
+            <div class="input-prepend"><label>E-mail</label>
+                <!-- <span class="add-on"><i class="icon-envelope"></i></span> -->
+                <input type="text" name="email" value="<?php echo $resultado->email; ?>" placeholder="E-mail:" />
+            </div>
+            <div class="input-prepend"><label>Senha</label>
+                <!-- <span class="add-on"><i class="icon-user"></i></span> -->
+                <input type="password" name="senha" value="<?php echo $resultado->senha; ?>" placeholder="Senha:" />
+            </div>
+            <div class="input-prepend"><label>Endereço</label>
+               <!-- <span class="add-on"><i class="icon-user"></i></span> -->
+                <input type="text" name="endereco" value="<?php echo $resultado->endereco; ?>" placeholder="Endereco:" />
+            </div>
+            <div class="input-prepend"><label>Número</label>
+                <!-- <span class="add-on"><i class="icon-user"></i></span> -->
+                <input type="text" name="numero" value="<?php echo $resultado->numero; ?>" placeholder="Numero:" min="0" max="10000" />
+            </div>
+            <div class="input-prepend"><label>Bairro</label>
+                <!-- <span class="add-on"><i class="icon-user"></i></span> -->
+                <input type="text" name="bairro" value="<?php echo $resultado->bairro; ?>" placeholder="Bairro:" />
+            </div>
+            <div class="input-prepend"><label>Cidade</label>
+               <!-- <span class="add-on"><i class="icon-user"></i></span> -->
+                <input type="text" name="cidade" value="<?php echo $resultado->cidade; ?>" placeholder="Cidade:" />
+            </div>
+            <div class="input-prepend"><label>Estado</label>
+               <!-- <span class="add-on"><i class="icon-user"></i></span> -->
+                <select name="estado" value="<?php echo $resultado->estado; ?>" >
+                    <option value="Acre">Acre</option>
+                    <option value="Alagoas">Alagoas</option>
+                    <option value="Amapá">Amapá</option>
+                    <option value="Amazonas">Amazonas</option>
+                    <option value="Bahia">Bahia</option>
+                    <option value="Ceará">Ceará</option>
+                    <option value="Distrito Federal">Distrito Federal</option>
+                    <option value="Espírito Santo">Espírito Santo</option>
+                    <option value="Goiás">Goiás</option>
+                    <option value="Maranhão">Maranhão</option>
+                    <option value="Mato Grosso">Mato Grosso</option>
+                    <option value="Mato Grosso do Sul">Mato Grosso do Sul</option>
+                    <option value="Minas Gerais">Minas Gerais</option>
+                    <option value="Pará">Pará</option>
+                    <option value="Paraíba">Paraíba</option>
+                    <option value="Paraná">Paraná</option>
+                    <option value="Pernambuco">Pernambuco</option>
+                    <option value="Piauí">Piauí</option>
+                    <option value="Rio de Janeiro">Rio de Janeiro</option>
+                    <option value="Rio Grande do Norte">Rio Grande do Norte</option>
+                    <option value="Rio Grande do Sul">Rio Grande do Sul</option>
+                    <option value="Rondônia">Rondônia</option>
+                    <option value="Roraima">Roraima</option>
+                    <option value="Santa Catarina">Santa Catarina</option>
+                    <option value="São Paulo">São Paulo</option>
+                    <option value="Sergipe">Sergipe</option>
+                    <option value="Tocantins">Tocantins</option>
+                </select>
+            </div>
+            <div class="input-prepend"><label>CEP</label>
+                <!-- <span class="add-on"><i class="icon-user"></i></span> -->
+                <input type="text" name="cep" value="<?php echo $resultado->cep; ?>" size="30" maxlength="10" onKeyPress="MascaraCep(formulario_usuario.cep);" />
+            </div>
+            <div class="input-prepend"><label>Nome da Mãe</label>
+                <!-- <span class="add-on"><i class="icon-user"></i></span> -->
+                <input type="text" name="nomeMae" value="<?php echo $resultado->nomeMae; ?>" placeholder="Nome da Mãe:" />
+            </div>
+            <div class="input-prepend"><label>Nome do Pai</label>
+                <!-- <span class="add-on"><i class="icon-user"></i></span> -->
+                <input type="text" name="nomePai" value="<?php echo $resultado->nomePai; ?>" placeholder="Nome do Pai:" />
+            </div>
+            <div class="input-prepend"><label>RG</label>
+                <!-- <span class="add-on"><i class="icon-user"></i></span> -->
+                <!-- <input type="text" name="numRG" value="<?php echo $resultado->numRG; ?>" placeholder="RG:" /> -->
+                <input name="rg" type="text" id="rg" size="30" maxlength="12" onKeyPress="MascaraRG(formulario_usuario.rg);" placeholder="RG:"/>
+            </div>
+            <div class="input-prepend"><label>CPF</label>
+                <!-- <span class="add-on"><i class="icon-user"></i></span> -->
+                <input type="text" name="numCPF" onKeyPress="MascaraCPF(formulario_usuario.cpf);" size="30" maxlength="14" value="<?php echo $resultado->numCPF; ?>" placeholder="CPF:" />
+            </div>
+            <div class="input-prepend"><label>Data de Nascimento</label>
+                <!-- <span class="add-on"><i class="icon-user"></i></span> -->
+                <input type="text" name="dataNasc" value="<?php echo $resultado->dataNasc; ?>" placeholder="Data Nascimento:" />
+            </div>
+            <div class="input-prepend"><label>Sexo</label>
+                <!-- <span class="add-on"><i class="icon-user"></i></span> -->
+                <input type="text" name="sexo" value="<?php echo $resultado->sexo; ?>" placeholder="Sexo: " />
+            </div>
+            <div class="input-prepend"><label>Modalidade</label>
+                <!-- <span class="add-on"><i class="icon-user"></i></span> -->
+                <input type="text" name="modalidade" value="<?php echo $resultado->modalidade; ?>" placeholder="Modalidade: " />
+            </div>
+            <input type="hidden" name="id" value="<?php echo $resultado->id; ?>">
+
+            <div class="input-prepend"><label>Escolaridade</label>
+                <!-- <span class="add-on"><i class="icon-user"></i></span> -->
+                <select name="escolaridade" >
+                    <option value="Fundamental 1">Fundamental 1</option>
+                    <option value="Fundamental 2">Fundamental 2</option>
+                    <option value="Médio">Médio</option>
+                    <option value="Superior">Superior</option>
+                </select>
+            </div>
+            <div class="input-prepend"><label>Estado Civíl</label>
+                <!-- <span class="add-on"><i class="icon-user"></i></span> -->
+                <select name="estadoCivil">
+                    <option value="Solteiro(a)">Solteiro(a)</option>
+                    <option value="Casado(a)">Casado(a)</option>
+                    <option value="Divorciado(a)/Seperado(a)">Divorciado(a)/Seperado(a)</option>
+                    <option value="Viúvo(a)">Viúvo(a)</option>
+                </select>
+            </div>
+            <div class="input-prepend"><label>Profissão</label>
+                <!-- <span class="add-on"><i class="icon-user"></i></span> -->
+                <input type="text" name="profissao" placeholder="Profissão:" value=<?php echo $resultado->profissao; ?> />
+            </div>
+            <div class="input-prepend"><label>Telefone Residencial</label>
+                <!-- <span class="add-on"><i class="icon-user"></i></span> -->
+                <input type="text" name="telResidencial" placeholder="Telefone Residencial:" value=<?php echo $resultado->telResidencial; ?> size="30" maxlength="15" onKeyPress="MascaraTelefone(telResidencial);"/>
+            </div>
+            <div class="input-prepend"><label>Celular</label>
+                <!-- <span class="add-on"><i class="icon-user"></i></span> -->
+                <input type="text" name="telCelular" placeholder="Telefone Celular:" value=<?php echo $resultado->telCelular; ?> size="30" maxlength="15" onKeyPress="MascaraTelefone(telCelular);" />
+            </div>
+            <div class="input-prepend"><label>WhatsApp</label>
+                <!-- <span class="add-on"><i class="icon-user"></i></span> -->
+                <input type="text" name="whatsApp" placeholder="WhatsApp:" value=<?php echo $resultado->whatsApp; ?> size="30" maxlength="15" onKeyPress="MascaraTelefone(whatsApp);" />
+            </div>
+            <br />
+            <br />
+
+            <div class="input-prepend">
+                <label>Fala outros idiomas?</label>
+                <input type="radio" name="outroIdioma" id="idiomaSim" value="Sim" /><label for="idiomaSim">Sim</label>
+                <input type="radio" name="outroIdioma" id="idiomaNao" value="Não" /><label for="idiomaNao">Não</label>
+                <input type="text" name="qualIdioma" placeholder="Outros idiomas:" value=<?php echo $resultado->qualIdioma; ?> />
+            </div>
+            <div class="input-prepend">
+                <label>Estuda?</label>
+                <input type="radio" name="estudaAinda" id="estudaSim" value="Sim" /><label for="estudaSim">Sim</label>
+                <input type="radio" name="estudaAinda" id="estudaNao" value="Não" /><label for="estudaNao">Não</label>
+                <input type="text" name="qualCurso" placeholder="Quais cursos:" value=<?php echo $resultado->qualCurso; ?> />
+            </div>
+            <div class="input-prepend">
+                <label>Pratica Esporte atualmente?</label>
+                <input type="radio" name="praticaEsporte" id="praticaSim" value="Sim" /><label for="praticaSim">Sim</label>
+                <input type="radio" name="praticaEsporte" id="praticaNao" value="Não" /><label for="praticaNao">Não</label>
+                <input type="text" name="qualEsporte" placeholder="Quais esportes:" value=<?php echo $resultado->qualEsporte; ?> />
+            </div>
+            <div class="input-prepend">
+                <label>Possui problema de saúde?</label>
+                <input type="radio" name="problemaSaude" id="problemaSim" value="Sim" /><label for="problemaSim">Sim</label>
+                <input type="radio" name="problemaSaude" id="problemaNao" value="Não" /><label for="problemaNao">Não</label>
+                <input type="text" name="qualProblema" placeholder="Quais problemas:" value="<?php echo $resultado->qualProblema; ?>" />
+            </div>
+            <div class="input-prepend">
+                <label>Possui Convenio?</label>
+                <input type="radio" name="possuiConvenio" id="convenioSim" value="Sim" /><label for="possuiConvenio">Sim</label>
+                <input type="radio" name="possuiConvenio" id="convenioNao" value="Não" /><label for="convenioNao">Não</label>
+                <input type="text" name="qualConvenio" placeholder="Qual convenio:" value="<?php echo $resultado->qualConvenio; ?>" />
+            </div>
+            <div class="input-prepend">
+                <label>Já praticou alguma arte marcial?</label>
+                <input type="radio" name="arteMarcial" id="marcialSim" value="Sim" /><label for="marcialSim">Sim</label>
+                <input type="radio" name="arteMarcial" id="marcialNao" value="Não" /><label for="marcialNao">Não</label>
+                <input type="text" name="qualArte" placeholder="Quais artes marciais:" value="<?php echo $resultado->qualArte; ?>" />
+            </div>
+            <br />
+            <input type="submit" name="atualizar" class="btn btn-primary" value="Atualizar dados">                  
+        </form>
+
+        <?php }else{ ?>
+
+
+        <form id="formulario_usuario" method="post" action="">
+            <div class="input-prepend"><label>Nome Completo</label>
+                <!-- <span class="add-on"><i class="icon-user"></i></span> -->
+                <input type="text" name="nome" placeholder="Nome:" />
+            </div>
+            <div class="input-prepend"><label>E-mail</label>
+                <!-- <span class="add-on"><i class="icon-user"></i></span> -->
+                <input type="text" name="email" placeholder="E-mail:" />
+            </div>
+            <div class="input-prepend"><label>Senha:</label>
+                <!-- <span class="add-on"><i class="icon-user"></i></span> -->
+                <input type="password" name="senha" placeholder="Senha:" />
+            </div>
+            <div class="input-prepend"><label>Endereço</label>
+                <!-- <span class="add-on"><i class="icon-user"></i></span> -->
+                <input type="text" name="endereco" placeholder="Endereço:" />
+            </div>
+            <div class="input-prepend"><label>Número</label>
+                <!-- <span class="add-on"><i class="icon-user"></i></span> -->
+                <input type="number" name="numero" placeholder="Número:"  min="0" max="10000" />
+            </div>
+            <div class="input-prepend"><label>Bairro</label>
+                <!-- <span class="add-on"><i class="icon-user"></i></span> -->
+                <input type="text" name="bairro" placeholder="Bairro:" />
+            </div>
+            <div class="input-prepend"><label>Cidade</label>
+                <!-- <span class="add-on"><i class="icon-user"></i></span> -->
+                <input type="text" name="cidade" placeholder="Cidade:" />
+            </div>
+            <div class="input-prepend"><label>Estado</label>
+                <!-- <span class="add-on"><i class="icon-user"></i></span> -->
+                <select name="estado">
+                    <option value="Acre">Acre</option>
+                    <option value="Alagoas">Alagoas</option>
+                    <option value="Amapá">Amapá</option>
+                    <option value="Amazonas">Amazonas</option>
+                    <option value="Bahia">Bahia</option>
+                    <option value="Ceará">Ceará</option>
+                    <option value="Distrito Federal">Distrito Federal</option>
+                    <option value="Espírito Santo">Espírito Santo</option>
+                    <option value="Goiás">Goiás</option>
+                    <option value="Maranhão">Maranhão</option>
+                    <option value="Mato Grosso">Mato Grosso</option>
+                    <option value="Mato Grosso do Sul">Mato Grosso do Sul</option>
+                    <option value="Minas Gerais">Minas Gerais</option>
+                    <option value="Pará">Pará</option>
+                    <option value="Paraíba">Paraíba</option>
+                    <option value="Paraná">Paraná</option>
+                    <option value="Pernambuco">Pernambuco</option>
+                    <option value="Piauí">Piauí</option>
+                    <option value="Rio de Janeiro">Rio de Janeiro</option>
+                    <option value="Rio Grande do Norte">Rio Grande do Norte</option>
+                    <option value="Rio Grande do Sul">Rio Grande do Sul</option>
+                    <option value="Rondônia">Rondônia</option>
+                    <option value="Roraima">Roraima</option>
+                    <option value="Santa Catarina">Santa Catarina</option>
+                    <option value="São Paulo">São Paulo</option>
+                    <option value="Sergipe">Sergipe</option>
+                    <option value="Tocantins">Tocantins</option>
+                </select>
+            </div>
+            <div class="input-prepend"><label>CEP</label>
+                <!-- <span class="add-on"><i class="icon-user"></i></span> -->
+                <input type="text" name="cep" placeholder="CEP:" size="30" maxlength="10" onKeyPress="MascaraCep(formulario_usuario.cep);" />
+            </div>
+            <div class="input-prepend"><label>Nome da Mãe</label>
+                <!-- <span class="add-on"><i class="icon-user"></i></span> -->
+                <input type="text" name="nomeMae" placeholder="Nome da Mãe" />
+            </div>
+            <div class="input-prepend"><label>Nome do Pai</label>
+                <!-- <span class="add-on"><i class="icon-user"></i></span> -->
+                <input type="text" name="nomePai" placeholder="Nome do Pai:" />
+            </div>
+            <div class="input-prepend"><label>RG</label>
+                <!-- <span class="add-on"><i class="icon-user"></i></span> -->
+                <!-- <input type="text" name="numRG" placeholder="RG:" /> -->
+                <input name="rg" type="text" id="numRG" size="30" maxlength="12" onKeyPress="MascaraRG(formulario_usuario.numRG);" placeholder="RG:"/>
+            </div>
+            <div class="input-prepend"><label>CPF</label>
+                <!-- <span class="add-on"><i class="icon-user"></i></span> -->
+                <input type="text" name="numCPF" placeholder="CPF:" size="30" maxlength="14" onKeyPress="MascaraCPF(formulario_usuario.numCPF);" />
+            </div>
+            <div class="input-prepend"><label>Data de Nascimento</label>
+                <!-- <span class="add-on"><i class="icon-user"></i></span> -->
+                <input type="date" name="dataNasc" placeholder="Data Nascimento:" />
+            </div>
+            <div class="input-prepend"><label>Sexo</label>
+                <!-- <span class="add-on"><i class="icon-user"></i></span> -->
+                <select name="sexo">
+                    <option value="Masculino">Masculino</option>
+                    <option value="Feminino">Feminino</option>
+                </select>
+            </div>
+            <div class="input-prepend"><label>Modalidade</label>
+                <!-- <span class="add-on"><i class="icon-user"></i></span> -->
+                <input type="text" name="modalidade" placeholder="Modalidade:" />
+            </div>
+            <div class="input-prepend"><label>Escolaridade</label>
+                <!-- <span class="add-on"><i class="icon-user"></i></span> -->
+                <select name="escolaridade">
+                    <option value="Fundamental 1">Fundamental 1</option>
+                    <option value="Fundamental 2">Fundamental 2</option>
+                    <option value="Médio">Médio</option>
+                    <option value="Superior">Superior</option>
+                </select>
+            </div>
+            <div class="input-prepend"><label>Estado Civíl</label>
+                <!-- <span class="add-on"><i class="icon-user"></i></span> -->
+                <select name="estadoCivil">
+                    <option value="Solteiro(a)">Solteiro(a)</option>
+                    <option value="Casado(a)">Casado(a)</option>
+                    <option value="Divorciado(a)/Seperado(a)">Divorciado(a)/Seperado(a)</option>
+                    <option value="Viúvo(a)">Viúvo(a)</option>
+                </select>
+            </div>
+            <div class="input-prepend"><label>Profissão</label>
+                <!-- <span class="add-on"><i class="icon-user"></i></span> -->
+                <input type="text" name="profissao" placeholder="Profissão:" />
+            </div>
+            <div class="input-prepend"><label>Telefone Residencial</label>
+                <!-- <span class="add-on"><i class="icon-user"></i></span> -->
+                <input type="text" name="telResidencial" placeholder="Telefone Residencial:" size="30" maxlength="15" onKeyPress="MascaraTelefone(telResidencial);" />
+            </div>
+            <div class="input-prepend"><label>Celular</label>
+                <!-- <span class="add-on"><i class="icon-user"></i></span> -->
+                <input type="text" name="telCelular" placeholder="Telefone Celular:" size="30" maxlength="15" onKeyPress="MascaraTelefone(telCelular);" />
+            </div>
+            <div class="input-prepend"><label>WhatsApp</label>
+                <!-- <span class="add-on"><i class="icon-user"></i></span> -->
+                <input type="text" name="whatsApp" placeholder="WhatsApp:" size="30" maxlength="15" onKeyPress="MascaraTelefone(whatsApp);" />
+            </div>
+            <br />
+            <br />
+
+            <div class="input-prepend">
+                <label>Fala outros idiomas?</label>
+                <input type="radio" name="outroIdioma" id="idiomaSim" value="Sim" /><label for="idiomaSim">Sim</label>
+                <input type="radio" name="outroIdioma" id="idiomaNao" value="Não" /><label for="idiomaNao">Não</label>
+                <input type="text" name="qualIdioma" placeholder="Outros idiomas:" />
+            </div>
+            <div class="input-prepend">
+                <label>Estuda?</label>
+                <input type="radio" name="estudaAinda" id="estudaSim" value="Sim" /><label for="estudaSim">Sim</label>
+                <input type="radio" name="estudaAinda" id="estudaNao" value="Não" /><label for="estudaNao">Não</label>
+                <input type="text" name="qualCurso" placeholder="Quais cursos:" />
+            </div>
+            <div class="input-prepend">
+                <label>Pratica Esporte atualmente?</label>
+                <input type="radio" name="praticaEsporte" id="praticaSim" value="Sim" /><label for="praticaSim">Sim</label>
+                <input type="radio" name="praticaEsporte" id="praticaNao" value="Não" /><label for="praticaNao">Não</label>
+                <input type="text" name="qualEsporte" placeholder="Quais esportes:" />
+            </div>
+            <div class="input-prepend">
+                <label>Possui problema de saúde?</label>
+                <input type="radio" name="problemaSaude" id="problemaSim" value="Sim" /><label for="problemaSim">Sim</label>
+                <input type="radio" name="problemaSaude" id="problemaNao" value="Não" /><label for="problemaNao">Não</label>
+                <input type="text" name="qualProblema" placeholder="Quais problemas:" />
+            </div>
+            <div class="input-prepend">
+                <label>Possui Convenio?</label>
+                <input type="radio" name="possuiConvenio" id="convenioSim" value="Sim" /><label for="possuiConvenio">Sim</label>
+                <input type="radio" name="possuiConvenio" id="convenioNao" value="Não" /><label for="convenioNao">Não</label>
+                <input type="text" name="qualConvenio" placeholder="Qual convenio:" />
+            </div>
+            <div class="input-prepend">
+                <label>Já praticou alguma arte marcial?</label>
+                <input type="radio" name="arteMarcial" id="marcialSim" value="Sim" /><label for="marcialSim">Sim</label>
+                <input type="radio" name="arteMarcial" id="marcialNao" value="Não" /><label for="marcialNao">Não</label>
+                <input type="text" name="qualArte" placeholder="Quais artes marciais:" />
+            </div>
+            <br />
+            <input type="submit" name="cadastrar" class="btn btn-primary" value="Cadastrar dados">                  
+        </form>
+
+        <?php } ?>
+
+        <table class="table table-hover">
+            
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nome:</th>
+                    <th>E-mail:</th>
+                    <th>Endereço:</th>
+                    <th>Cidade:</th>
+                    <th>DataNascimento:</th>
+                    <th>Sexo:</th>
+                    <th>Modalidade:</th>
+                    <th>telResidencial:</th>
+                    <th>telCelular:</th>
+                    <th>whatsApp:</th>
+                </tr>
+            </thead>
+            
+            <?php foreach($usuario->findAll() as $key => $value): ?>
+
+            <tbody>
+                <tr>
+                    <td><?php echo $value->id; ?></td>
+                    <td><?php echo $value->nome; ?></td>
+                    <td><?php echo $value->email; ?></td>
+                    <td><?php echo $value->endereco.", "; ?><?php echo $value->numero." - "; ?><?php echo $value->bairro; ?></td>
+                    <td><?php echo $value->cidade; ?></td>
+                    <td><?php echo $value->dataNasc; ?></td>
+                    <td><?php echo $value->sexo; ?></td>
+                    <td><?php echo $value->modalidade; ?></td>
+                    <td><?php echo $value->telResidencial; ?></td>
+                    <td><?php echo $value->telCelular; ?></td>
+                    <td><?php echo $value->whatsApp; ?></td>
+                    <td>
+                        <?php echo "<a href='index.php?acao=editar&id=" . $value->id . "'>Editar</a>"; ?>
+                        <?php echo "<a href='index.php?acao=deletar&id=" . $value->id . "' onclick='return confirm(\"Deseja realmente deletar?\")'>Deletar</a>"; ?>
+                    </td>
+                </tr>
+            </tbody>
+
+            <?php endforeach; ?>
+
+        </table>
+            </div>
+        </div>
+                
+
+    </article>
+
+
+    <!-- footer
+    ================================================== -->
+   <footer>
+        <div class="row">
+            <div class="col-full">
+
+                <div class="footer-logo">
+                    <a class="footer-site-logo" href="#0"><img src="images/logo.png" alt="Homepage"></a>
+                </div>
+
+                <ul class="footer-social">
+                    <li><a href="#0">
+                        <i class="im im-facebook" aria-hidden="true"></i>
+                        <span>Facebook</span>
+                    </a></li>
+                    <li><a href="#0">
+                        <i class="im im-twitter" aria-hidden="true"></i>
+                        <span>Twitter</span>
+                    </a></li>
+                    <li><a href="#0">
+                        <i class="im im-instagram" aria-hidden="true"></i>
+                        <span>Instagram</span>
+                    </a></li>
+                    <li><a href="#0">
+                        <i class="im im-pinterest" aria-hidden="true"></i>
+                        <span>Pinterest</span>
+                    </a></li>
+                </ul>
+                    
+            </div>
+        </div>
+    
+            <div class="row footer-bottom">
+
+            <div class="col-twelve">
+                <div class="copyright">
+                    <span>© Copyright Losmacacos 2017</span> 
+                    <span>Design by Losmacacos</span>   
+                </div>
+
+                <div class="go-top">
+                <a class="smoothscroll" title="Back to Top" href="#top"><i class="im im-arrow-up" aria-hidden="true"></i></a>
+                </div>
+            </div>
+
+        </div> <!-- end footer-bottom -->
+        </footer> <!-- end footer -->
+    
+    
+        <div id="preloader"> 
+            <div id="loader"></div>
+        </div>
+    
+    
+        <!-- Java Script
+        ================================================== -->
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/jQuery.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/MascaraValidacao.js"></script>
+
+</body>
+
+</html>
