@@ -72,11 +72,11 @@ if( isset($_SESSION['user_id']) ){
 
         <nav class="header-nav-wrap">
             <ul class="header-nav">
-                <li><a href="index.html#home" title="home">Home</a></li>
-                <li><a href="index.html#about" title="about">About</a></li>
-                <li><a href="index.html#works" title="works">Works</a></li>
-                <li class="current"><a href="blog.html" title="blog">Blog</a></li>
-                <li><a href="index.html#contact" title="contact">Contact</a></li>	
+                <li><a href="index.php#home" title="home">Home</a></li>
+                <li><a href="index.php#about" title="about">História</a></li>
+                <li><a href="index.php#works" title="works">Liga Garra de Águia</a></li>
+                <li class="current"><a href="blog.html" title="blog">Atibaia II</a></li>
+                <li><a href="index.php#contact" title="contact">Contato</a></li>   
             </ul>
         </nav>
 
@@ -92,11 +92,16 @@ if( isset($_SESSION['user_id']) ){
         <div class="row page-header__content">
             <article class="col-full">
 
-                <div class="page-header__info">
-                    <div class="page-header__cat">
-                        <a href="#0">Branding</a><a href="#0">Design</a>
+            <div class="row page-header__content narrow">
+                <article class="col-full">
+                    <div class="page-header__info">
+                        <div class="page-header__cat">
+                            <a href="#0">Área do Atleta</a>
+                        </div>
                     </div>
-                </div>
+                    
+                </article>
+            </div>
             
             </article>
         </div>
@@ -112,7 +117,7 @@ if( isset($_SESSION['user_id']) ){
             <div class="col-full">
 
                 <div class="header">
-                    <a href="/">Your App Name</a>
+                    Área do Atleta
                 </div>
 
                 <?php if( !empty($user) ): ?>
@@ -120,13 +125,14 @@ if( isset($_SESSION['user_id']) ){
                     <br />Bem vindo, <?= $user['email']; ?> 
                     <br /><br />Você está logado no Sistema!
                     <br /><br />
+                    <li><a href="userdata.php" title="dados">Informar meus dados pessoais e pesquisa</a></li>  
                     <a href="logout.php">Clique aqui para sair?</a>
 
                 <?php else: ?>
 
-                    <h1>Please Login or Register</h1>
+                    <h1>Por favor efetue o login ou Cadastre-se</h1>
                     <a href="blog.php">Logar no Sistema</a> or
-                    <a href="newuser.php">Criar Registro</a>
+                    <a href="newuser.php">Cadastrar-se</a>
 
                 <?php endif; ?>
 
