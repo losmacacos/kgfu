@@ -43,7 +43,7 @@
     <header class="s-header">
 
         <div class="header-logo">
-            <a class="site-logo" href="index.html"><img src="images/logo.png" alt="Homepage"></a>
+            <a class="site-logo" href="index.php"><img src="images/logo.png" alt="Homepage"></a>
         </div>
 
         <nav class="header-nav-wrap">
@@ -53,6 +53,7 @@
                 <li><a class="smoothscroll"  href="#works" title="works">Liga Garra de Águia</a></li>
                 <li><a class="smoothscroll"  href="#blog" title="blog">Atibaia II</a></li>
                 <li><a class="smoothscroll"  href="#contact" title="contact">Contato</a></li>
+                <li><a  href="logar.php" >Área do Atleta</a></li>
             </ul>
         </nav>
 

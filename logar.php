@@ -8,22 +8,23 @@ if( isset($_SESSION['user_id']) ){
 
 require 'database.php';
 
-$message = '';
-
 if(!empty($_POST['email']) && !empty($_POST['password'])):
     
-    // Enter the new user in the database
-    $sql = "INSERT INTO usuarios (email, password) VALUES (:email, :password)";
-    $stmt = $conn->prepare($sql);
+    $records = $conn->prepare('SELECT id,email,password FROM usuarios WHERE email = :email');
+    $records->bindParam(':email', $_POST['email']);
+    $records->execute();
+    $results = $records->fetch(PDO::FETCH_ASSOC);
 
-    $stmt->bindParam(':email', $_POST['email']);
-    $stmt->bindParam(':password', password_hash($_POST['password'], PASSWORD_BCRYPT));
+    $message = '';
 
-    if( $stmt->execute() ):
-        $message = 'Successfully created new user';
-    else:
-        $message = 'Sorry there must have been an issue creating your account';
-    endif;
+    if(count($results) > 0 && password_verify($_POST['password'], $results['password']) ){
+
+        $_SESSION['user_id'] = $results['id'];
+        header("Location: userspace.php");
+
+    } else {
+        $message = 'Sorry, those credentials do not match';
+    }
 
 endif;
 
@@ -41,7 +42,7 @@ endif;
     <!--- basic page needs
     ================================================== -->
     <meta charset="utf-8">
-    <title>Blog - Hola</title>
+    <title>Área do Atleta - Atibaia II</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -78,7 +79,7 @@ endif;
             <a class="site-logo" href="index.html"><img src="images/logo.png" alt="Homepage"></a>
         </div>
 
-         <nav class="header-nav-wrap">
+        <nav class="header-nav-wrap">
             <ul class="header-nav">
                 <li><a href="index.php#home" title="home">Home</a></li>
                 <li><a href="index.php#about" title="about">História</a></li>
@@ -96,30 +97,22 @@ endif;
     <!-- page header
     ================================================== -->
     <section class="page-header page-hero" style="background-image:url(images/blog/blog-bg-01.jpg)">
-        
+
             <div class="row page-header__content narrow">
                 <article class="col-full">
                     <div class="page-header__info">
                         <div class="page-header__cat">
-                            <a href="#0">Cadastro do Atleta</a>
+                            <a href="#0">Área do Atleta</a>
                         </div>
                     </div>
                     <h1 class="page-header__title">
                         <a href="#0" title="">
-                            Insira seus dados pessoais logo abaixo!
+                            Informe seus dados abaixo
                         </a>
                     </h1>
-                    <ul class="page-header__meta">
-                        <li class="author">
-                            - 
-                            <span>  Instrutora Andressa Nardini</span>
-                        </li>
-                    </ul>
                     
                 </article>
             </div>
-    
-        </div> <!-- end page-header -->
 
     </section> <!-- end page-header -->
 
@@ -131,23 +124,22 @@ endif;
         <div class="row blog-content">
             <div class="col-full">
 
-                <?php if(!empty($message)): ?>
-                    <p><?= $message ?></p>
-                <?php endif; ?>
+                    <?php if(!empty($message)): ?>
+                        <p><?= $message ?></p>
+                    <?php endif; ?>
 
-                <h1>Cadastre-se</h1>
-                <span>ou <a href="logar.php">Clique aqui para logar</a></span>
-
-                <form action="newuser.php" method="POST">
+                    <h1>Logar</h1>
                     
-                    <input type="text" placeholder="Informe seu e-mail" name="email">
-                    <input type="password" placeholder="e sua senha" name="password">
-                    <input type="password" placeholder="confirme sua senha" name="confirm_password">
-                    <input type="submit" value="Cadastrar">
 
-                </form>
+                    <form action="logar.php" method="POST">
+                        
+                        <input type="text" placeholder="Digite seu e-mail" name="email">
+                        <input type="password" placeholder="e sua senha" name="password">
 
+                        <input type="submit" value="Entrar">
 
+                    </form>
+                    <span>ou, <a href="newuser.php">cadastrar-se aqui </a></span>
 
 
             </div> <!-- end col-full -->
@@ -190,7 +182,6 @@ endif;
 
         <div class="row footer-bottom">
 
-            <div class="col-twelve">
             <div class="col-twelve">
                 <div class="copyright">
                     <span>© Copyright Losmacacos 2017</span> 
