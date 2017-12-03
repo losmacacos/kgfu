@@ -2,30 +2,22 @@
 
 session_start();
 
-if( isset($_SESSION['user_id']) ){
-    header("Location: /");
-}
-
 require 'database.php';
 
-$message = '';
+if( isset($_SESSION['user_id']) ){
 
-if(!empty($_POST['email']) && !empty($_POST['password'])):
-    
-    // Enter the new user in the database
-    $sql = "INSERT INTO usuarios (email, password) VALUES (:email, :password)";
-    $stmt = $conn->prepare($sql);
+    $records = $conn->prepare('SELECT id,email,password FROM usuarios WHERE id = :id');
+    $records->bindParam(':id', $_SESSION['user_id']);
+    $records->execute();
+    $results = $records->fetch(PDO::FETCH_ASSOC);
 
-    $stmt->bindParam(':email', $_POST['email']);
-    $stmt->bindParam(':password', password_hash($_POST['password'], PASSWORD_BCRYPT));
+    $user = NULL;
 
-    if( $stmt->execute() ):
-        $message = 'Successfully created new user';
-    else:
-        $message = 'Sorry there must have been an issue creating your account';
-    endif;
+    if( count($results) > 0){
+        $user = $results;
+    }
 
-endif;
+}
 
 ?>
 

@@ -33,7 +33,7 @@ if( isset($_SESSION['user_id']) ){
     <!--- basic page needs
     ================================================== -->
     <meta charset="utf-8">
-    <title>Blog - Hola</title>
+    <title>Área do Atleta - Atibaia II</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -125,13 +125,13 @@ if( isset($_SESSION['user_id']) ){
                     <br />Bem vindo, <?= $user['email']; ?> 
                     <br /><br />Você está logado no Sistema!
                     <br /><br />
-                    <li><a href="userdata.php" title="dados">Informar meus dados pessoais e pesquisa</a></li>  
-                    <a href="logout.php">Clique aqui para sair?</a>
+                    <li><a href="userdata.php">Informar meus dados pessoais e pesquisa</a></li>  <br /><br />
+                    <a href="logout.php">Clique aqui para sair</a>
 
                 <?php else: ?>
 
                     <h1>Por favor efetue o login ou Cadastre-se</h1>
-                    <a href="blog.php">Logar no Sistema</a> or
+                    <a href="blog.php">Logar no Sistema</a> ou
                     <a href="newuser.php">Cadastrar-se</a>
 
                 <?php endif; ?>

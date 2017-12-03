@@ -23,7 +23,7 @@ if(!empty($_POST['email']) && !empty($_POST['password'])):
         header("Location: userspace.php");
 
     } else {
-        $message = 'Sorry, those credentials do not match';
+        $message = 'Atenção, seus dados não foram encontrados!';
     }
 
 endif;

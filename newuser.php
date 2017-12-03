@@ -20,9 +20,9 @@ if(!empty($_POST['email']) && !empty($_POST['password'])):
     $stmt->bindParam(':password', password_hash($_POST['password'], PASSWORD_BCRYPT));
 
     if( $stmt->execute() ):
-        $message = 'Successfully created new user';
+        $message = 'Novo usuário criado com sucesso!';
     else:
-        $message = 'Sorry there must have been an issue creating your account';
+        $message = 'Houve algum problema na criação do usuário, verifique os dados informados!';
     endif;
 
 endif;
