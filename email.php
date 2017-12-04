@@ -8,7 +8,7 @@ $Mensagem	= $_POST["contactMessage"];	// Pega os valores do campo Mensagem
 
 $Vai 		= "Nome: $Nome\n\nE-mail: $Email\n\nTelefone: $Fone\n\nMensagem: $Mensagem\n";
 
-require_once("phpmailer/class.phpmailer.php");
+require_once("/phpmailer/class.phpmailer.php");
 
 define('GUSER', 'kungfuatibaia2@gmail.com');	// <-- Insira aqui o seu GMail
 define('GPWD', 'enigma27');		// <-- Insira aqui a senha do seu GMail
