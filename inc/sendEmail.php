@@ -1,69 +1,49 @@
 ﻿<?php
+$Nome       = $_POST["contactName"];    // Pega o valor do campo Nome
+$Fone       = $_POST["contactSubject"]; // Pega o valor do campo Telefone
+$Email      = $_POST["contactEmail"];   // Pega o valor do campo Email
+$Mensagem   = $_POST["contactMessage"]; // Pega os valores do campo Mensagem
 
-// Replace this with your own email address
-$siteOwnersEmail = 'user@website.com';
+// Variável que junta os valores acima e monta o corpo do email
 
+$Vai        = "Nome: $Nome\n\nE-mail: $Email\n\nTelefone: $Fone\n\nMensagem: $Mensagem\n";
 
-if($_POST) {
+require_once("phpmailer/class.phpmailer.php");
 
-    $name = trim(stripslashes($_POST['contactName']));
-    $email = trim(stripslashes($_POST['contactEmail']));
-    $subject = trim(stripslashes($_POST['contactSubject']));
-    $contact_message = trim(stripslashes($_POST['contactMessage']));
+define('GUSER', 'kungfuatibaia2@gmail.com');    // <-- Insira aqui o seu GMail
+define('GPWD', 'enigma27');     // <-- Insira aqui a senha do seu GMail
 
-    // Check Name
-    if (strlen($name) < 2) {
-        $error['name'] = "Please enter your name.";
+function smtpmailer($para, $de, $de_nome, $assunto, $corpo) { 
+    global $error;
+    $mail = new PHPMailer();
+    $mail->IsSMTP();        // Ativar SMTP
+    $mail->SMTPDebug = 0;       // Debugar: 1 = erros e mensagens, 2 = mensagens apenas
+    $mail->SMTPAuth = true;     // Autenticação ativada
+    $mail->SMTPSecure = 'ssl';  // SSL REQUERIDO pelo GMail
+    $mail->Host = 'smtp.gmail.com'; // SMTP utilizado
+    $mail->Port = 587;          // A porta 587 deverá estar aberta em seu servidor
+    $mail->Username = GUSER;
+    $mail->Password = GPWD;
+    $mail->SetFrom($de, $de_nome);
+    $mail->Subject = $assunto;
+    $mail->Body = $corpo;
+    $mail->AddAddress($para);
+    if(!$mail->Send()) {
+        $error = 'Mail error: '.$mail->ErrorInfo; 
+        return false;
+    } else {
+        $error = 'Mensagem enviada!';
+        return true;
     }
-    // Check Email
-    if (!preg_match('/^[a-z0-9&\'\.\-_\+]+@[a-z0-9\-]+\.([a-z0-9\-]+\.)*+[a-z]{2}/is', $email)) {
-        $error['email'] = "Please enter a valid email address.";
-    }
-    // Check Message
-    if (strlen($contact_message) < 15) {
-        $error['message'] = "Please enter your message. It should have at least 15 characters.";
-    }
-    // Subject
-    if ($subject == '') { $subject = "Contact Form Submission"; }
-
-
-    // Set Message
-    $message .= "Email from: " . $name . "<br />";
-    $message .= "Email address: " . $email . "<br />";
-    $message .= "Message: <br />";
-    $message .= $contact_message;
-    $message .= "<br /> ----- <br /> This email was sent from your site's contact form. <br />";
-
-    // Set From: header
-    $from =  $name . " <" . $email . ">";
-
-    // Email Headers
-    $headers = "From: " . $from . "\r\n";
-    $headers .= "Reply-To: ". $email . "\r\n";
-    $headers .= "MIME-Version: 1.0\r\n";
-    $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-
-
-    if (!$error) {
-
-        ini_set("sendmail_from", $siteOwnersEmail); // for windows server
-        $mail = mail($siteOwnersEmail, $subject, $message, $headers);
-
-        if ($mail) { echo "OK"; }
-        else { echo "Something went wrong. Please try again."; }
-        
-    } # end if - no validation error
-
-    else {
-
-        $response = (isset($error['name'])) ? $error['name'] . "<br /> \n" : null;
-        $response .= (isset($error['email'])) ? $error['email'] . "<br /> \n" : null;
-        $response .= (isset($error['message'])) ? $error['message'] . "<br />" : null;
-        
-        echo $response;
-
-    } # end if - there was a validation error
-
 }
 
+// Insira abaixo o email que irá receber a mensagem, o email que irá enviar (o mesmo da variável GUSER), 
+o nome do email que envia a mensagem, o Assunto da mensagem e por último a variável com o corpo do email.
+
+ if (smtpmailer('losmacacos@gmail.com', 'kungfuatibaia2@gmail.com', 'Nome do Enviador', 'Assunto do Email', $Vai)) {
+
+    Header("location:https://kungfucadastro.herokuapp.com/"); // Redireciona para uma página de obrigado.
+
+}
+if (!empty($error)) echo $error;
 ?>
