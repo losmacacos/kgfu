@@ -349,7 +349,7 @@
                 $.ajax({
     
                     type: "POST",
-                    url: "inc/sendEmail.php",
+                    url: "classes/email.php",
                     data: $(form).serialize(),
                     beforeSend: function() { 
     
@@ -376,7 +376,7 @@
                     error: function() {
     
                         sLoader.slideUp("slow"); 
-                        $('.message-warning').html("Something went wrong. Please try again.");
+                        $('.message-warning').html("Deu ruim! Tente de novo.");
                         $('.message-warning').slideDown("slow");
     
                     }
