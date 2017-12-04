@@ -1,15 +1,15 @@
 <?php 
  $mail = new PHPMailer();
- $mail->IsSMTP(); // envia por SMTP 
+ $mail->IsSMTP(); 
  $mail->CharSet = 'UTF-8';
  $mail->True;
- $mail->SMTPSecure = “tls”;
  $mail->Host = "smtp.gmail.com"; // Servidor SMTP
+ $mail->SMTPSecure = "tls"; // conexão segura com TLS
  $mail->Port = 587; 
  $mail->SMTPAuth = true; // Caso o servidor SMTP precise de autenticação
  $mail->Username = "kungfuatibaia2@gmail.com"; // SMTP username
  $mail->Password = "enigma27"; // SMTP password
- $mail->From = "losmacacos@gmai.com"; // From
+ $mail->From = "losmacacos@gmail.com"; // From
  $mail->FromName = "Sua Empresa" ; // Nome de quem envia o email
  $mail->AddAddress($mailDestino, $nome); // Email e nome de quem receberá //Responder
  $mail->WordWrap = 50; // Definir quebra de linha
