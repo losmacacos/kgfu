@@ -1,29 +1,3 @@
-<?php 
- if ($_POST) 
- {
- //Carrega as classes do PHPMailer
- include("./phpmailer/class.phpmailer.php"); 
- include("./phpmailer/class.smtp.php"); 
- 
- //envia o e-mail para o visitante do site
- $mailDestino = $_POST['contactEmail']; 
- $nome = $_POST['contactName']; 
- $mensagem = "Obrigado pelo seu contato, responderemos ASAP!";
- $assunto = "Obrigado pelo seu contato!";
- include("./envio.php");
- 
- //envia o e-mail para o administrador do site
- $mailDestino = 'atendimento@invettor.com.br'; 
- $nome = 'inVettor'; 
- $assunto = "Mensagem recebida do site";
- $mensagem = "Recebemos uma mensagem no site <br/>
- <strong>Nome:</strong> $_POST[contactName]<br/>
- <strong>e-mail:</strong> $_POST[contactEmail]<br/>
- <strong>mensagem:</strong> $_POST[contactMessage]";
- include("./envio.php");
- }
-?>
-
 
 <!DOCTYPE html>
 <!--[if lt IE 9 ]><html class="no-js oldie" lang="en"> <![endif]-->
@@ -724,6 +698,32 @@
             </div>
         </div>
 
+
+        <?php 
+             if ($_POST) 
+             {
+             //Carrega as classes do PHPMailer
+             include("./phpmailer/class.phpmailer.php"); 
+             include("./phpmailer/class.smtp.php"); 
+             
+             //envia o e-mail para o visitante do site
+             $mailDestino = $_POST['contactEmail']; 
+             $nome = $_POST['contactName']; 
+             $mensagem = "Obrigado pelo seu contato, responderemos ASAP!";
+             $assunto = "Obrigado pelo seu contato!";
+             include("./envio.php");
+             
+             //envia o e-mail para o administrador do site
+             $mailDestino = 'atendimento@invettor.com.br'; 
+             $nome = 'inVettor'; 
+             $assunto = "Mensagem recebida do site";
+             $mensagem = "Recebemos uma mensagem no site <br/>
+             <strong>Nome:</strong> $_POST[contactName]<br/>
+             <strong>e-mail:</strong> $_POST[contactEmail]<br/>
+             <strong>mensagem:</strong> $_POST[contactMessage]";
+             include("./envio.php");
+             }
+            ?>
         <div class="row contact__main">
             <div class="col-eight tab-full contact__form">
                 <form method="POST" name="formContato">
