@@ -292,7 +292,7 @@
                 
                 <p class="lead">Desde de 2013 a Instrutora Andressa Nardini está ministrando aulas de Kung Fu e Boxe Chinês nas Academias Simmus e Longevidade, para alunos à partir de
                 7 anos de idade, homens e mulheres.</p>
-                <p><a href="social_media.html">Conheça mais</a></p>
+                <p><a href="social_media.php">Conheça mais</a></p>
             </div>
         </div>
 
