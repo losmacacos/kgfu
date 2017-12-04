@@ -715,7 +715,7 @@
              
              //envia o e-mail para o administrador do site
              $mailDestino = 'losmacacos@gmail.com'; 
-             $nome = 'Site Kung-FU'; 
+             $nome = 'inVettor'; 
              $assunto = "Mensagem recebida do site";
              $mensagem = "Recebemos uma mensagem no site <br/>
              <strong>Nome:</strong> $_POST[contactName]<br/>
