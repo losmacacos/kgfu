@@ -698,12 +698,9 @@
             </div>
         </div>
 
-        <?php
-            require_once("phpmailer/class.phpmailer.php");
-        ?>
         <div class="row contact__main">
             <div class="col-eight tab-full contact__form">
-                <form name="contactForm" id="contactForm" method="post" action="email.php">
+                <form  method="post" action="email.php">
                     <fieldset>
     
                     <div class="form-field">
