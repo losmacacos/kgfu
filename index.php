@@ -709,18 +709,18 @@
              //envia o e-mail para o visitante do site
              $mailDestino = $_POST['contactEmail']; 
              $nome = $_POST['contactName']; 
-             $mensagem = "Obrigado pelo seu contato, responderemos ASAP!";
+             $mensagem = "Obrigado pelo seu contato, responderemos em breve!";
              $assunto = "Obrigado pelo seu contato!";
              include("./envio.php");
              
              //envia o e-mail para o administrador do site
-             $mailDestino = 'losmacacos@gmail.com'; 
-             $nome = 'inVettor'; 
-             $assunto = "Mensagem recebida do site";
+             $mailDestino = 'andressanardini@yahoo.com.br'; 
+             $nome = 'KungFu - Atibaia II'; 
+             $assunto = "Mensagem recebida do site - KungFu Atibaia II";
              $mensagem = "Recebemos uma mensagem no site <br/>
-             <strong>Nome:</strong> $_POST[contactName]<br/>
+             <strong>Nome de quem enviou:</strong> $_POST[contactName]<br/>
              <strong>e-mail:</strong> $_POST[contactEmail]<br/>
-             <strong>mensagem:</strong> $_POST[contactMessage]";
+             <strong>mensagem enviada:</strong> $_POST[contactMessage]";
              include("./envio.php");
              }
             ?>

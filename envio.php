@@ -9,8 +9,8 @@
  $mail->SMTPAuth = true; // Caso o servidor SMTP precise de autenticação
  $mail->Username = "kungfuatibaia2@gmail.com"; // SMTP username
  $mail->Password = "enigma27"; // SMTP password
- $mail->From = "losmacacos@gmail.com"; // From
- $mail->FromName = "Sua Empresa" ; // Nome de quem envia o email
+ $mail->From = "andressanardini@yahoo.com.br"; // From
+ $mail->FromName = "Atibaia II - Kung-Fu" ; // Nome de quem envia o email
  $mail->AddAddress($mailDestino, $nome); // Email e nome de quem receberá //Responder
  $mail->WordWrap = 50; // Definir quebra de linha
  $mail->IsHTML = true ; // Enviar como HTML
