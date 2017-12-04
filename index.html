@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <!--[if lt IE 9 ]><html class="no-js oldie" lang="en"> <![endif]-->
 <!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
@@ -43,7 +44,7 @@
     <header class="s-header">
 
         <div class="header-logo">
-            <a class="site-logo" href="index.html"><img src="images/logo.png" alt="Homepage"></a>
+            <a class="site-logo" href="index.php"><img src="images/logo.png" alt="Homepage"></a>
         </div>
 
         <nav class="header-nav-wrap">
@@ -53,6 +54,7 @@
                 <li><a class="smoothscroll"  href="#works" title="works">Liga Garra de Águia</a></li>
                 <li><a class="smoothscroll"  href="#blog" title="blog">Atibaia II</a></li>
                 <li><a class="smoothscroll"  href="#contact" title="contact">Contato</a></li>
+                <li><a  href="logar.php" >Área do Atleta</a></li>
             </ul>
         </nav>
 
@@ -290,6 +292,7 @@
                 
                 <p class="lead">Desde de 2013 a Instrutora Andressa Nardini está ministrando aulas de Kung Fu e Boxe Chinês nas Academias Simmus e Longevidade, para alunos à partir de
                 7 anos de idade, homens e mulheres.</p>
+                <p><a href="blog.html">Saiba mais</a></p>
             </div>
         </div>
 
@@ -695,9 +698,12 @@
             </div>
         </div>
 
+        <?php
+            require_once("phpmailer/class.phpmailer.php");
+        ?>
         <div class="row contact__main">
             <div class="col-eight tab-full contact__form">
-                <form name="contactForm" id="contactForm" method="post" action="">
+                <form name="contactForm" id="contactForm" method="post" action="email.php">
                     <fieldset>
     
                     <div class="form-field">
