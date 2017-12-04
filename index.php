@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <!--[if lt IE 9 ]><html class="no-js oldie" lang="en"> <![endif]-->
 <!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
@@ -697,9 +698,12 @@
             </div>
         </div>
 
+        <?php
+            require_once("phpmailer/class.phpmailer.php");
+        ?>
         <div class="row contact__main">
             <div class="col-eight tab-full contact__form">
-                <form name="contactForm" id="contactForm" method="post" action="">
+                <form name="contactForm" id="contactForm" method="post" action="classes/email.php">
                     <fieldset>
     
                     <div class="form-field">
