@@ -334,60 +334,6 @@
     };
 
 
-    /* Contact Form
-     * ------------------------------------------------------ */
-    var ssContactForm = function() {
-
-        /* local validation */
-	    $('#contactForm').validate({
-        
-            /* submit via ajax */
-            submitHandler: function(form) {
-    
-                var sLoader = $('.submit-loader');
-    
-                $.ajax({
-    
-                    type: "POST",
-                    url: "classes/email.php",
-                    data: $(form).serialize(),
-                    beforeSend: function() { 
-    
-                        sLoader.slideDown("slow");
-    
-                    },
-                    success: function(msg) {
-    
-                        // Message was sent
-                        if (msg == 'OK') {
-                            sLoader.slideUp("slow"); 
-                            $('.message-warning').fadeOut();
-                            $('#contactForm').fadeOut();
-                            $('.message-success').fadeIn();
-                        }
-                        // There was an error
-                        else {
-                            sLoader.slideUp("slow"); 
-                            $('.message-warning').html(msg);
-                            $('.message-warning').slideDown("slow");
-                        }
-    
-                    },
-                    error: function() {
-    
-                        sLoader.slideUp("slow"); 
-                        $('.message-warning').html("Deu ruim! Tente de novo.");
-                        $('.message-warning').slideDown("slow");
-    
-                    }
-    
-                });
-            }
-    
-        });
-    };
-
-
    /* Back to Top
     * ------------------------------------------------------ */
     var ssBackToTop = function() {
