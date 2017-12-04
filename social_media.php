@@ -93,22 +93,12 @@
         <div class="row blog-content">
             <div class="col-full">
 
-                    <?php if(!empty($message)): ?>
-                        <p><?= $message ?></p>
-                    <?php endif; ?>
-
-                    <h1>Logar</h1>
-                    
-
-                    <form action="logar.php" method="POST">
-                        
-                        <input type="text" placeholder="Digite seu e-mail" name="email">
-                        <input type="password" placeholder="e sua senha" name="password">
-
-                        <input type="submit" value="Entrar">
-
-                    </form>
-                    <span>ou, <a href="newuser.php">cadastrar-se aqui </a></span>
+                    <?php 
+ 
+                     $access_token = SEU-ACCESS-TOKEN;
+                     $user = file_get_contents( "https://api.instagram.com/v1/users/self/media/recent/?access_token=$access_token" );
+                     $user = json_decode($user, true)['data'];
+                     ?>
 
 
             </div> <!-- end col-full -->
