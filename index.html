@@ -292,7 +292,7 @@
                 
                 <p class="lead">Desde de 2013 a Instrutora Andressa Nardini está ministrando aulas de Kung Fu e Boxe Chinês nas Academias Simmus e Longevidade, para alunos à partir de
                 7 anos de idade, homens e mulheres.</p>
-                <p><a href="blog.html">Saiba mais</a></p>
+                <p><a href="blog/">Conheça mais</a></p>
             </div>
         </div>
 
@@ -698,12 +698,35 @@
             </div>
         </div>
 
-        <?php
-            require_once("phpmailer/class.phpmailer.php");
-        ?>
+
+        <?php 
+             if ($_POST) 
+             {
+             //Carrega as classes do PHPMailer
+             include("./phpmailer/class.phpmailer.php"); 
+             include("./phpmailer/class.smtp.php"); 
+             
+             //envia o e-mail para o visitante do site
+             $mailDestino = $_POST['contactEmail']; 
+             $nome = $_POST['contactName']; 
+             $mensagem = "Obrigado pelo seu contato, responderemos em breve!";
+             $assunto = "Obrigado pelo seu contato!";
+             include("./envio.php");
+             
+             //envia o e-mail para o administrador do site
+             $mailDestino = 'andressanardini@yahoo.com.br'; 
+             $nome = 'KungFu - Atibaia II'; 
+             $assunto = "Mensagem recebida do site - KungFu Atibaia II";
+             $mensagem = "Recebemos uma mensagem no site <br/>
+             <strong>Nome de quem enviou:</strong> $_POST[contactName]<br/>
+             <strong>e-mail:</strong> $_POST[contactEmail]<br/>
+             <strong>mensagem enviada:</strong> $_POST[contactMessage]";
+             include("./envio.php");
+             }
+            ?>
         <div class="row contact__main">
             <div class="col-eight tab-full contact__form">
-                <form name="contactForm" id="contactForm" method="post" action="email.php">
+                <form method="POST" name="formContato">
                     <fieldset>
     
                     <div class="form-field">
