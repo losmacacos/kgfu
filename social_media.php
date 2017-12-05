@@ -76,7 +76,7 @@
                     </div>
                     <h1 class="page-header__title">
                         <a href="#0" title="">
-                            Informe seus dados abaixo
+                            Veja nossas atividades!
                         </a>
                     </h1>
                     
@@ -95,7 +95,7 @@
 
                     <?php 
  
-                     $access_token = 6663446711.1677ed0.0b4922aa447c47179b7fd71225509ae8;
+                     $access_token = "6663446711.1677ed0.0b4922aa447c47179b7fd71225509ae8";
                      $user = file_get_contents( "https://api.instagram.com/v1/users/self/media/recent/?access_token=$access_token" );
                      $user = json_decode($user, true)['data'];
                      ?>
