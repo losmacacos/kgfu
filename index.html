@@ -54,7 +54,7 @@
                 <li><a class="smoothscroll"  href="#works" title="works">Liga Garra de Águia</a></li>
                 <li><a class="smoothscroll"  href="#blog" title="blog">Atibaia II</a></li>
                 <li><a class="smoothscroll"  href="#contact" title="contact">Contato</a></li>
-                <li><a  href="logar.php" >Área do Atleta</a></li>
+                <!-- <li><a  href="logar.php" >Área do Atleta</a></li> -->
             </ul>
         </nav>
 
@@ -292,7 +292,7 @@
                 
                 <p class="lead">Desde de 2013 a Instrutora Andressa Nardini está ministrando aulas de Kung Fu e Boxe Chinês nas Academias Simmus e Longevidade, para alunos à partir de
                 7 anos de idade, homens e mulheres.</p>
-                <p><a href="nossoblog/">Conheça mais</a></p>
+                <!-- <p><a href="nossoblog/">Conheça mais</a></p> -->
             </div>
         </div>
 
