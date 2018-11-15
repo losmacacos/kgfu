@@ -661,15 +661,19 @@
                     <article class="col-block">
                                 
                         <div class="blog-date">
-                            <p>Academia Longevidade</p>
+                            <p>Academia Strickers Mori</p>
                         </div>  
                         
                         <h2 class="h01"><p>Segunda, Quarta e Sexta</p></h2>
                         <p>
                         <br />Treinos de Kung Fu e Boxe Chinês.
-                        <br />Horário: das 19:30 às 21:00 horas
+                        <br />Horário: das 20:30 às 21:30 horas
                         </p>
-
+                        <h2 class="h01"><p>Terça e Quinta/p></h2>
+                        <p>
+                        <br />Treinos de Kung Fu e Boxe Chinês.
+                        <br />Horário: das 18:00 às 19:00 horas
+                        </p>
                         <div class="blog-cat">
                               
                         </div>
@@ -779,9 +783,9 @@
 
                 <h4 class="h06">Endereço</h4>
                 <p>
-                Academia Longevidade<br>
-                Av. Dona Gertrudes, 1435<br>
-                Jd.Alvinópolis - Atibaia/SP
+                Academia Strickers Mori<br>
+                Rua João Pires, 127 <br>
+                Centro - Atibaia/SP
                 </p>
 
                 <p>
