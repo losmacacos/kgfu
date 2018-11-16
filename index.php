@@ -705,15 +705,17 @@
              if ($_POST) 
              {
              //Carrega as classes do PHPMailer
-             include('/phpmailer/class.phpmailer.php'); 
-             include('/phpmailer/class.smtp.php'); 
+                 require_once("phpmailer/class.phpmailer.php");
+                 require_once("phpmailer/class.smtp.php");
+             include("/phpmailer/class.phpmailer.php"); 
+             include("/phpmailer/class.smtp.php"); 
              
              //envia o e-mail para o visitante do site
              $mailDestino = $_POST['contactEmail']; 
              $nome = $_POST['contactName']; 
              $mensagem = "Obrigado pelo seu contato, responderemos em breve!";
              $assunto = "Obrigado pelo seu contato!";
-             include('email.php');
+             include("email.php");
              
              //envia o e-mail para o administrador do site
              $mailDestino = 'andressanardini@yahoo.com.br'; 
@@ -723,7 +725,7 @@
              <strong>Nome de quem enviou:</strong> $_POST[contactName]<br/>
              <strong>e-mail:</strong> $_POST[contactEmail]<br/>
              <strong>mensagem enviada:</strong> $_POST[contactMessage]";
-             include('email.php');
+             include("email.php");
              }
             ?>
         <div class="row contact__main">
