@@ -728,7 +728,7 @@
             ?>
         <div class="row contact__main">
             <div class="col-eight tab-full contact__form">
-                <form method="POST" name="formContato">
+                <form method="POST" action="email.php" name="formContato">
                     <fieldset>
     
                     <div class="form-field">
