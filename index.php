@@ -707,8 +707,8 @@
              //Carrega as classes do PHPMailer
                  
                  
-             include("/phpmailer/class.phpmailer.php"); 
-             include("/phpmailer/class.smtp.php"); 
+             include("./phpmailer/class.phpmailer.php"); 
+             include("./phpmailer/class.smtp.php"); 
              
              //envia o e-mail para o visitante do site
              $mailDestino = $_POST['contactEmail']; 
