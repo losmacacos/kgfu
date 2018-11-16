@@ -290,7 +290,7 @@
                 <h3>Atibaia 2 - Kung Fu e Boxe Chinês</h3>
                 <h1>Liga Garra de Águia</h1>
                 
-                <p class="lead">Desde de 2013 a Instrutora Andressa Nardini está ministrando aulas de Kung Fu e Boxe Chinês nas Academias Simmus e Longevidade, para alunos à partir de
+                <p class="lead">Desde de 2013 a Instrutora Andressa Nardini está ministrando aulas de Kung Fu e Boxe Chinês nas Academias Simmus e Strickers, para alunos à partir de
                 7 anos de idade, homens e mulheres.</p>
                 <!-- <p><a href="nossoblog/">Conheça mais</a></p> -->
             </div>
