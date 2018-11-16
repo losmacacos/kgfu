@@ -668,10 +668,7 @@
                         <p>
                         <br />Treinos de Kung Fu e Boxe Chinês.
                         <br />Horário: das 20:30 às 21:30 horas
-                        </p>
-                        <h2 class="h01"><p>Terça e Quinta/p></h2>
-                        <p>
-                        <br />Treinos de Kung Fu e Boxe Chinês.
+                        <h2 class="h01"><p>Terça e Quinta</p></h2>                        
                         <br />Horário: das 18:00 às 19:00 horas
                         </p>
                         <div class="blog-cat">
