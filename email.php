@@ -42,7 +42,7 @@ o nome do email que envia a mensagem, o Assunto da mensagem e por último a vari
 
  if (smtpmailer('losmacacos@gmail.com', 'kungfuatibaia2@gmail.com', 'Nome do Enviador', 'Assunto do Email', $Vai)) {
 
-	Header("location:https://kungfucadastro.herokuapp.com/"); // Redireciona para uma página de obrigado.
+	Header("location:https://kungfuatibaia2.herokuapp.com/"); // Redireciona para uma página de obrigado.
 
 }
 if (!empty($error)) echo $error;
