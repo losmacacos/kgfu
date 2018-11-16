@@ -713,7 +713,7 @@
              $nome = $_POST['contactName']; 
              $mensagem = "Obrigado pelo seu contato, responderemos em breve!";
              $assunto = "Obrigado pelo seu contato!";
-             include('envio.php');
+             include('email.php');
              
              //envia o e-mail para o administrador do site
              $mailDestino = 'andressanardini@yahoo.com.br'; 
@@ -723,7 +723,7 @@
              <strong>Nome de quem enviou:</strong> $_POST[contactName]<br/>
              <strong>e-mail:</strong> $_POST[contactEmail]<br/>
              <strong>mensagem enviada:</strong> $_POST[contactMessage]";
-             include('envio.php');
+             include('email.php');
              }
             ?>
         <div class="row contact__main">
