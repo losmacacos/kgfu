@@ -648,7 +648,7 @@
                         
                         <h2 class="h01"><p>Terça e Quinta</p></h2>
                         <p>
-                        <br />Treinos de Boxe Chinês.
+                        <br />Treinos de Kung Fu e Boxe Chinês.
                         <br />Horário: das 21:00 às 22:00 horas
                         </p>
 
@@ -665,12 +665,11 @@
                         </div>  
                         
                         <h2 class="h01"><p>Segunda, Quarta e Sexta</p></h2>
-                        <p>
                         <br />Treinos de Kung Fu e Boxe Chinês.
                         <br />Horário: das 20:30 às 21:30 horas
                         <h2 class="h01"><p>Terça e Quinta</p></h2>                        
                         <br />Horário: das 18:00 às 19:00 horas
-                        </p>
+                       
                         <div class="blog-cat">
                               
                         </div>
