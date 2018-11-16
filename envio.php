@@ -4,7 +4,7 @@
  $mail->CharSet = 'UTF-8';
  $mail->True;
  $mail->Host = "smtp.gmail.com"; // Servidor SMTP
- $mail->SMTPSecure = "ssl"; // conexão segura com TLS
+ $mail->SMTPSecure = "tsl"; // conexão segura com TLS
  $mail->Port = 587; 
  $mail->SMTPAuth = true; // Caso o servidor SMTP precise de autenticação
  $mail->Username = "kungfuatibaia2@gmail.com"; // SMTP username
