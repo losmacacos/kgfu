@@ -8,7 +8,7 @@ $Mensagem	= $_POST["contactMessage"];	// Pega os valores do campo Mensagem
 
 $Vai 		= "Nome: $Nome\n\nE-mail: $Email\n\nTelefone: $Fone\n\nMensagem: $Mensagem\n";
 
-require_once("/phpmailer/class.phpmailer.php");
+require_once("phpmailer/class.phpmailer.php");
 
 define('GUSER', 'kungfuatibaia2@gmail.com');	// <-- Insira aqui o seu GMail
 define('GPWD', 'enigma27');		// <-- Insira aqui a senha do seu GMail
@@ -42,7 +42,7 @@ o nome do email que envia a mensagem, o Assunto da mensagem e por último a vari
 
  if (smtpmailer('losmacacos@gmail.com', 'kungfuatibaia2@gmail.com', 'Nome do Enviador', 'Assunto do Email', $Vai)) {
 
-	Header("location:https://kungfuatibaia2.herokuapp.com/"); // Redireciona para uma página de obrigado.
+	Header("location:http://kungfuatibaia2.herokuapp.com/"); // Redireciona para uma página de obrigado.
 
 }
 if (!empty($error)) echo $error;
